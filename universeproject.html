@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SOLAR SYSTEM</title>   
+    </head>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+            background-color:black;
+            overflow:hidden;
+        }
+        .solar-system {
+            position:relative;
+            width:90vmin;
+            height:90vmin;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .sun{
+            position:relative;
+                width:8vw;
+                height:8vw;
+                background-color:yellow;
+                border-radius:50%;
+                box-shadow:0 0 1em white;
+        }
+        @media (max-width:600px) {
+            .sun {
+                width:15vw;
+                height:15vw;
+            }
+        }
+        .mercury{
+            position:absolute;
+            height:20px;
+            width:20px;
+            background:#a94c2b;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #f9c05f;
+            left:43%;
+            top:42%;
+            transform:translate(-50%,-50%);
+            animation:orbit2 2.7s linear infinite;
+        }
+        @keyframes orbit2{
+            from{
+                transform:rotate(0deg)translateX(70px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(70px)rotate(-360deg);
+            }
+        }
+        p{
+            color:white;
+            font-family:system-ui;
+            position:absolute;
+            left:-62px;
+            top:-11px;
+        }
+        .mercury-outer,.venus-outer,.earth-outer,.mars-outer,.jupiter-outer,.saturn-outer,.uranus-outer,.neptune-outer{
+            border-radius:50%;
+            border:1px dotted #ddd9;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        .mercury-outer{
+            height:140px;
+            width:140px;
+        }
+        .venus{
+            position:absolute;
+            height:40px;
+            width:40px;
+            background:#f8e2b0;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #c1aa81;
+            left:40%;
+            top:42%;
+            transform:translate(-50%,-50%);
+            animation:orbit3 10s linear infinite;
+        }
+        @keyframes orbit3{
+            from{
+                transform:rotate(0deg)translateX(100px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(100px)rotate(-360deg);
+            }
+        }
+        .venus-outer{
+            height:200px;
+            width:200px;
+        }
+        .earth{
+            position:absolute;
+            height:50px;
+            width:50px;
+            background:#4cb6ac;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #2855d6;
+            left:44%;
+            top:43%;
+            transform:translate(-50%,-50%);
+            animation:orbit4 20s linear infinite;
+        }
+        @keyframes orbit4{
+            from{
+                transform:rotate(0deg)translateX(150px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(150px)rotate(-360deg);
+            }
+        }
+        .earth-outer{
+            height:300px;
+            width:300px;
+        }
+        .earth-circle{
+            height:65px;
+            width:65px;
+            border:1px dotted #fff;
+            position:relative;
+            left:-8px;
+            top:-8px;
+            border-radius:40px;
+        }
+        .earth-inner{
+            height:10px;
+            width:10px;
+            background-color:silver;
+            border-radius:50%;
+            position:absolute;
+            transform:translate(-50%,-50%);
+            left:45%;
+            top:45%;
+            animation:orbit5 3s linear infinite;
+        }
+        @keyframes orbit5{
+            from{
+                transform:rotate(0deg)translateX(33px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(33px)rotate(-360deg);
+            }
+        }
+        .mars{
+            position:absolute;
+            height:30px;
+            width:30px;
+            background:#f0e7e7;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #fea535;
+            left:46.5%;
+            top:46.5%;
+            transform:translate(-50%,-50%);
+            animation:orbit6 30s linear infinite;
+        }
+        @keyframes orbit6{
+            from{
+                transform:rotate(0deg)translateX(185px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(185px)rotate(-360deg);
+            }
+        }
+        .mars-outer{
+            height:370px;
+            width:370px;
+        }
+        .jupiter{
+            position:absolute;
+            height:40px;
+            width:40px;
+            background:#C88B3A;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #cac2b9;
+            left:45%;
+            top:45%;
+            transform:translate(-50%,-50%);
+            animation:orbit7 60s linear infinite;
+        }
+        @keyframes orbit7{
+            from{
+                transform:rotate(0deg)translateX(217px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(217px)rotate(-360deg);
+            }
+        }
+        .jupiter-outer{
+            height:430px;
+            width:430px;
+        }
+        .uranus{
+            position:absolute;
+            height:30px;
+            width:30px;
+            background:#ACE5EE;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #cac2b9;
+            left:48%;
+            top:48%;
+            transform:translate(-50%,-50%);
+            animation:orbit10 200s linear infinite;
+        }
+        @keyframes orbit10{
+            from{
+                transform:rotate(0deg)translateX(280px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(280px)rotate(-360deg);
+            }
+        }
+        .uranus-outer{
+            height:560px;
+            width:560px;
+        }
+        .saturn{
+            position:absolute;
+            height:50px;
+            width:50px;
+            background:#cc8237;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #cac2b9;
+            left:45%;
+            top:45%;
+            transform:translate(-50%,-50%);
+            animation:orbit9 90s linear infinite;
+        }
+        @keyframes orbit9{
+            from{
+                transform:rotate(0deg)translateX(250px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(250px)rotate(-360deg);
+            }
+        }
+        .saturn-outer{
+            height:500px;
+            width:500px;
+        }
+        .neptune{
+            position:absolute;
+            height:30px;
+            width:30px;
+            background:#2E5D9D;
+            border-radius:50%;
+            box-shadow:-4px 2px 56px #cac2b9;
+            left:48%;
+            top:48%;
+            transform:translate(-50%,-50%);
+            animation:orbit11 400s linear infinite;
+        }
+        @keyframes orbit11{
+            from{
+                transform:rotate(0deg)translateX(310px)rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg)translateX(310px)rotate(-360deg);
+            }
+        }
+        .neptune-outer{
+            height:620px;
+            width:620px;
+        }
+        
+
+</style>
+<body>
+    <div class="solar-system">
+    <div class="sun"></div>
+    <div class="mercury-outer">
+    <div class="mercury">
+        <p>Mercury</p>
+       </div> 
+    </div>
+    <div class="venus-outer">
+        <div class="venus">
+            <p>Venus</p>
+           </div> 
+        </div>
+        <div class="earth-outer">
+            <div class="earth">
+                <div class="earth-circle">
+                    <div class="earth-inner"></div>
+                </div>
+            <p>Earth</p>
+        </div>
+        </div>
+        <div class="mars-outer">
+            <div class="mars">
+                <p>Mars</p>
+               </div> 
+            </div>
+        <div class="jupiter-outer">
+            <div class="jupiter">
+                <p>Jupiter</p>
+                </div> 
+            </div>
+        <div class="saturn-outer">
+            <div class="saturn">
+                <p>Saturn</p>
+                </div> 
+            </div>
+        <div class="uranus-outer">
+            <div class="uranus">
+                <p>Uranus</p>
+                </div> 
+            </div>
+        <div class="neptune-outer">
+            <div class="neptune">
+                <p>Neptune</p>
+                </div> 
+            </div>
+            </div>
+</body>
